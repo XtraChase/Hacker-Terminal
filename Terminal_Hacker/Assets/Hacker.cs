@@ -10,17 +10,23 @@ public class Hacker : MonoBehaviour
     void Start()
     {
        
-        ShowMainMenu();
+        ShowMainMenu("Select a hacking objective");
+        print("Hello" + "World");
     }
 
-    void ShowMainMenu ()
+    void ShowMainMenu (string greeting)
     {
         Terminal.ClearScreen(); 
-        string greeting = "Select a hacking objective";
         Terminal.WriteLine(greeting);
         Terminal.WriteLine("Press 1 for the police station");
         Terminal.WriteLine("press 2 for the FBI");
         Terminal.WriteLine("Press 3 for Area 51");
+        Terminal.WriteLine("Enter your selection:");
+    }
+
+    void OnUserInput(string input)
+    {
+        print("The user typed " + input);
     }
 
     // Update is called once per frame
