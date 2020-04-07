@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1440, y: 1080}
+  m_AnchoredPosition: {x: 8.6, y: -6.45}
+  m_SizeDelta: {x: 1283.1, y: 962.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222462908678986682
 CanvasRenderer:
@@ -110,8 +110,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -61, y: 92}
-  m_SizeDelta: {x: 838.87, y: 605.7}
+  m_AnchoredPosition: {x: -63.1, y: 96.8}
+  m_SizeDelta: {x: 786.6, y: 556.5}
   m_Pivot: {x: 0.5191488, y: 0.5969092}
 --- !u!222 &222854991399821168
 CanvasRenderer:
@@ -153,24 +153,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Hit Play or Ctrl+P to turn me on.
-
-
-    Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit. Pellentesque consequat porta nunc porta laoreet. Nam tempor
-    orci consequat ipsum volutpat, non tristique neque viverra. Aenean sit amet sagittis
-    lacus. Proin eu semper mi, ut tincidunt dolor. Integer tortor felis, mollis vitae
-    quam in, efficitur porta enim. Proin sit amet commodo augue, accumsan mollis
-    mi. Duis aliquam in diam sed tincidunt. Aliquam ultrices eget ipsum at efficitur.
-    Integer orci est, condimentum nec facilisis ac, rutrum eu ex. Nullam sodales
-    leo id bibendum dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Pellentesque consequat porta nunc porta laoreet. Nam tempor orci consequat ipsum
-    volutpat, non tristique neque viverra. Aenean sit amet sagittis lacus. Proin
-    eu semper mi, ut tincidunt dolor. Integer tortor felis, mollis vitae quam in,
-    efficitur porta enim. Proin sit amet commodo augue, accumsan mollis mi. Duis
-    aliquam in diam sed tincidunt. Aliquam ultrices eget ipsum at efficitur. Integer
-    orci est, condimentum nec facilisis ac, rutrum eu ex. Nullam sodales leo id bibendum
-    dictum.'
+  m_Text: Hit Play or Ctrl+P to turn me on.
 --- !u!1 &1404923856698552
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,8 +368,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1440, y: 1080}
+  m_AnchoredPosition: {x: 0.000030518, y: 0.000038147}
+  m_SizeDelta: {x: 1265.9, y: 949.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222731788670714960
 CanvasRenderer:
@@ -697,8 +680,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1440, y: 1080}
+  m_AnchoredPosition: {x: -10.8, y: 13.675}
+  m_SizeDelta: {x: 1335.6, y: 935.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222909161291715216
 CanvasRenderer:
