@@ -1,56 +1,130 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Hacker : MonoBehaviour {
-    // Start is called before the first frame update
-    void Start() {
-       
+public class Hacker : MonoBehaviour
+{
+    // Game configuration data
+    string[] level1Passwords = { "badge", "handcuffs", "gun", "sheriff", "jail", "radio"};
+    string[] level2Passwords = { "covert", "safehouse", "espionage", "infiltrate", "compromised", "cover" };
+    string[] level3Passwords = { "extraterrestrial", "top secret", "anti-gravity", "unidentified", "telepathy", "conspiracy" };
+
+    // game state
+    int level;
+    enum Screen { MainMenu, Waiting, Password, Win };
+    Screen currentScreen = Screen.MainMenu;
+    string password;
+
+    void Start()
+    {
         ShowMainMenu();
     }
 
-    void ShowMainMenu () {
-        Terminal.ClearScreen(); 
-        Terminal.WriteLine("Press 1 for the Police Station");
-        Terminal.WriteLine("press 2 for the FBI");
+    void ShowMainMenu()
+    {
+        currentScreen = Screen.MainMenu;
+        Terminal.ClearScreen();
+        Terminal.WriteLine("Press 1 for the FBI");
+        Terminal.WriteLine("press 2 for the CIA");
         Terminal.WriteLine("Press 3 for Area 51");
         Terminal.WriteLine("Enter your selection:");
     }
-     // game state
-    int level;
 
-    void OnUserInput(string  input) {
-        if (input == "menu") {
+
+    void OnUserInput(string input)
+    {
+        if (input == "menu" || input == "home")
+        {
             ShowMainMenu();
         }
-        else if(input == "1") {
-            level = 1;
-            StartGame();
-        }
-        else if (input == "2")
+        else if (currentScreen == Screen.MainMenu)
         {
-            level = 2;
-            StartGame();
+            RunMainMenu(input);
         }
-        else if (input == "3")
+        else if (currentScreen == Screen.Password)
         {
-            level = 3;
-            StartGame();
-        }
-        else {
-            Terminal.WriteLine("Error");
+            CheckPassword(input);
         }
     }
 
-    void StartGame()
+    void RunMainMenu(string input)
     {
-        Terminal.ClearScreen();
-        Terminal.WriteLine("Begin Hacking the Police Station");
+        bool isValidLevelNumber = (input == "1" || input == "2" || input == "3");
+        if (isValidLevelNumber)
+        {
+            level = int.Parse(input);
+            AskForPassword();
+        }
+        else
+        {
+            Terminal.WriteLine("ERROR");
+        }
     }
 
-    // Update is called once per frame
-    void Update() {
-        
+    void AskForPassword()
+    {
+        currentScreen = Screen.Password;
+        Terminal.ClearScreen();
+        SetRandomPassword();
+        Terminal.WriteLine("Password:  hint: " + password.Anagram());
+    }
+
+   void SetRandomPassword()
+    {
+        switch (level)
+        {
+            case 1:
+                password = level1Passwords[Random.Range(0, level1Passwords.Length)];
+                break;
+            case 2:
+                password = level2Passwords[Random.Range(0, level2Passwords.Length)];
+                break;
+            case 3:
+                password = level3Passwords[Random.Range(0, level3Passwords.Length)];
+                break;
+            default:
+                Terminal.WriteLine("ERROR");
+                Debug.LogError("Invalid Level number");
+                break;
+        }
+    }
+
+    void CheckPassword(string input)
+    {
+        if (input == password)
+        {
+            DisplayWinScreen();
+        }
+        else
+        {
+            AskForPassword();
+            Terminal.WriteLine("ERROR");
+        }
+    }
+
+    void DisplayWinScreen()
+    {
+        currentScreen = Screen.Win;
+        Terminal.ClearScreen();
+        ShowLevelReward();
+    }
+
+   void ShowLevelReward()
+    {
+                Terminal.WriteLine(@"
+███████▀▀▀░░░░░░░▀▀▀███████
+████▀░░░░░░░░░░░░░░░░▀█████
+████│░░░░░░░░░░░░░░░░░░│███
+███░└┐░░░░░░░░░░░░░░░░┌┘░██
+██░░┌┘▄▄▄▄▄░░░░░▄▄▄▄▄└┐░░██
+██▌░│██████▌░░░▐██████│░▐██
+███░│▐███▀▀░░▄░░▀▀███▌│░███
+██▀─┘░░░░░░░▐█▌░░░░░░░└─▀██
+██▄░░░▄▄▄▓░░▀█▀░░▓▄▄▄░░░▄██
+████▄─┘██▌░░░░░░░▐██└─▄████
+█████░░▐█─┬┬┬┬┬┬┬─█▌░░█████
+████▌░░░▀┬┼┼┼┼┼┼┼┬▀░░░▐████
+█████▄░░░└┴┴┴┴┴┴┴┘░░░▄█████
+███████▄░░░░░░░░░░░▄███████
+ACCESS GRANTED"
+                );
     }
 }
