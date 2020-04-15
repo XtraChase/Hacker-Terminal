@@ -265,6 +265,22 @@ PrefabInstance:
       propertyPath: m_Text
       value: Hit Play or Ctrl+P to turn me on.
       objectReference: {fileID: 0}
+    - target: {fileID: 224227349715615220, guid: c46548f7b668a78409fa399c095e4e6b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 98.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 224227349715615220, guid: c46548f7b668a78409fa399c095e4e6b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 551.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 224227349715615220, guid: c46548f7b668a78409fa399c095e4e6b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -58.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224227349715615220, guid: c46548f7b668a78409fa399c095e4e6b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 796.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c46548f7b668a78409fa399c095e4e6b, type: 3}
 --- !u!1 &1695684147 stripped

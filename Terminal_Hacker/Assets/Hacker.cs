@@ -28,7 +28,6 @@ public class Hacker : MonoBehaviour
         Terminal.WriteLine("Enter your selection:");
     }
 
-
     void OnUserInput(string input)
     {
         if (input == "menu" || input == "home")
